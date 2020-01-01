@@ -8,6 +8,7 @@
 </head>
 <body>
     <form action="/student/create" method="post">
+    @csrf
         <h1>Add Student</h1>
         <input type="text" name="name" id="name" placeholder="Name"><br/>
         <input type="text" name="address" id="address" placeholder="Address"><br/>
@@ -15,6 +16,7 @@
         <input type="text" name="contact" id="contact" placeholder="Mobile Number"><br/>
         <input type="text" name="username" id="username" placeholder="Username"><br/>
         <input type="password" name="password" id="password" placeholder="Password"><br/>
+        <input type="submit" value="Admission" name="submit">
     </form>
 </body>
 </html>

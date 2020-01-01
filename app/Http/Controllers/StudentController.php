@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use app\Student;
 class StudentController extends Controller
 {
     /**
@@ -34,7 +34,26 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Student::create([
+            'name'=>$request->name,
+            'address'=>$request->address,
+            'contact'=>$request->contact,
+            'email'=>$request->email,
+            'username'=>$request->username,
+            'password'=>$request->password,
+            'status'=>1
+        ]);
+        
+        /*
+            ^#Model::app>Student.php 
+
+            # model bhitra class ma fillable field define garne
+                protected $fillable=['name','email','phone','status','contact','username','password']; 
+            #controller bhitra::
+                use App\controllerName;
+                lekhnu parxa namespace bhanda tala
+        */
+
     }
 
     /**
