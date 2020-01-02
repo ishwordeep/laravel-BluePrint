@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Student;
+use App\Student;    //model name
 class StudentController extends Controller
 {
     /**
@@ -13,7 +13,8 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $studentLists=Student::get();
+        return view('student-lists')->with('studentList',$studentLists);
     }
 
     /**
@@ -75,7 +76,8 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        //
+        $student=Student::find($id);
+        return view('student-update')->with('sinfo',$student);
     }
 
     /**

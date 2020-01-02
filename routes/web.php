@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('/student/create','StudentController@create');
 Route::post('/student/create','StudentController@store');
+Route::get('/student/list','StudentController@index');
+
+Route::get('/student/update/{$id}','StudentController@edit');
